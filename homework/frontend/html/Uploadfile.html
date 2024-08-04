@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>敏捷看板</title>
+
+</head>
+
+<body>
+    <input type="file" id="videoUploader">
+    <button id="uploadBtn">上传</button>
+    <p id="uploadInfo"></p>
+    <progress id="uploadProgress" value="0" max="100"></progress>
+
+    <script>
+        const BASE_URL = 'http://127.0.0.1:8000/';
+
+        const UPLOAD_INFO = {
+            'NO_FILE': '请先选择文件',
+            'INVALID_TYPE': '不支持该类型文件上传',
+            'UPLOAD_FAILED': '上传失败',
+            'UPLOAD_SUCCESS': '上传成功'
+        }
+
+        const CHUNK_SIZE = 64 * 1024;
+
+        const API = {
+            UPLOAD_VIDEO: BASE_URL + 'upload_video'
+        }
+    </script>
+    <script type="module" src="/src/Addfile.jsx"></script>
+
+</body>
+
+</html>
